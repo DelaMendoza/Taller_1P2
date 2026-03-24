@@ -1,5 +1,7 @@
 package modelo.personas;
+
 import java.time.LocalDate;
+import modelo.hospital.Especialidad;
 
 //Cirujano completo hasta el momento
 public class Cirujano extends Medico {
@@ -9,7 +11,7 @@ public class Cirujano extends Medico {
 
     public Cirujano(int cirugiasRealizadas, boolean disponibleEmergencias, int id, String nombre, String apellido,
             LocalDate fechaNacimiento, String email, String legajo, LocalDate fechaContratacion, double salarioBase,
-            boolean activo, int numeroLicencia, String especialidad) {
+            boolean activo, int numeroLicencia, Especialidad especialidad) {
 
         super(id, nombre, apellido, fechaNacimiento, email, legajo, fechaContratacion, salarioBase, activo, numeroLicencia, especialidad);
         this.cirugiasRealizadas = cirugiasRealizadas;
@@ -36,13 +38,16 @@ public class Cirujano extends Medico {
     //Métodos sobreescritos de Empleado (Calc.Salario) y Persona (obt.Tipo)
     @Override
     public double calcularSalario() {
-        return getsalarioBase() + (getsalarioBase() * 0.5 * antiguedad() + calcularBono());
+        double bonoAntiguedad = getsalarioBase() * 0.5 * antiguedad();
+        double bonoEspecialidad = getsalarioBase() * getEspecialidad().getBonoPorcentual();
+        return getsalarioBase() + bonoAntiguedad + bonoEspecialidad;
     }
 
     @Override
     public String obtenerTipo() {
         return "Cirujano";
     }
+    
 // Métodos propios de Cirujano
 
     public void realizarCirugia() {

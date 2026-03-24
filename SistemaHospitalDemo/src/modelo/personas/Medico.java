@@ -1,21 +1,22 @@
 package modelo.personas;
-//Avance de medico, fala implementar aumento de salario por especialidad
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.abstractas.Empleado;
 import modelo.hospital.CitaMedica;
+import modelo.hospital.Especialidad;
 
 public class Medico extends Empleado {
 
     private int numeroLicencia;
-    private String especialidad;
+    private Especialidad especialidad;
     private List<Paciente> pacientesAsignados;
     private List<CitaMedica> citasAtendidas;
 
     public Medico(int id, String nombre, String apellido, LocalDate fechaNacimiento, String email,
             String legajo, LocalDate fechaContratacion, double salarioBase, boolean activo,
-            int numeroLicencia, String especialidad) {
+            int numeroLicencia, Especialidad especialidad) {
 
         super(id, nombre, apellido, fechaNacimiento, email, legajo, fechaContratacion, salarioBase, activo);
 
@@ -37,11 +38,11 @@ public class Medico extends Empleado {
 
     }
 
-    public String getEspecialidad() {
+    public Especialidad getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(String especialidad) {
+    public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
 
@@ -77,7 +78,9 @@ public class Medico extends Empleado {
     //Métodos sobreescritos, Salario de Empleado y Tipo de persona
     @Override
     public double calcularSalario() {
-        return getsalarioBase() + (getsalarioBase() * 0.5 * antiguedad());
+        double bonoAntiguedad = getsalarioBase() * 0.5 * antiguedad();
+        double bonoEspecialidad = getsalarioBase() * getEspecialidad().getBonoPorcentual();
+        return getsalarioBase() + bonoAntiguedad + bonoEspecialidad;
     }
 
     @Override

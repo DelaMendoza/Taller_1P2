@@ -53,7 +53,16 @@ public class Paciente extends Persona {
     public void setCitas(List<CitaMedica> citas) {
         this.citas = citas;
     }
+    
+    //Métodos propios de la clase Paciente
+    public void agregarAlergia(String alergia) {
+        alergias.add(alergia);
+    }
 
+    public List<CitaMedica> obtenerHistorial() {
+        return new ArrayList<>(citas);
+    }
+    
     //Métodos sobreescritos
     @Override
     public int calcularEdad() {
@@ -65,13 +74,5 @@ public class Paciente extends Persona {
         return "Paciente";
     }
 
-    //Métodos propios de la clase Paciente
-    
-    public void agregarAlergia(String alergia) {
-        alergias.add(alergia);
-    }
 
-    public List<CitaMedica> obtenerHistorial() {
-        return new ArrayList<>(citas);
-    }
 }

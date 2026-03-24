@@ -1,4 +1,4 @@
-//Lo siguiente a avanzar
+//Completado
 package modelo.personas;
 
 import java.time.LocalDate;
@@ -7,10 +7,8 @@ import java.util.List;
 import modelo.abstractas.Empleado;
 import modelo.abstractas.Persona;
 import modelo.enums.Turno;
-import static modelo.enums.Turno.Mañana;
 
 public class Enfermero extends Empleado {
-//turno, areaAsignada, pacientesACargo
 
     private Turno turno;
     private String areaAsignada;
@@ -25,6 +23,41 @@ public class Enfermero extends Empleado {
         this.pacientesACargo = new ArrayList<>();
     }
 
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        if (turno != null) {
+            this.turno = turno;
+        }
+
+    }
+
+    public String getAreaAsignada() {
+        return areaAsignada;
+    }
+
+    public void setAreaAsignada(String areaAsignada) {
+        if (!areaAsignada.isBlank()) {
+            this.areaAsignada = areaAsignada;
+        }
+    }
+
+    public List<Persona> getPacientesACargo() {
+        return new ArrayList<>(pacientesACargo);
+    }
+
+    public void setPacientesACargo(List<Persona> pacientesACargo) {
+        this.pacientesACargo = pacientesACargo;
+    }
+
+    //Métodos propios de la clase Enfermero
+    public void asistirCirugia(){
+        System.out.println("El enfermero asiste en cirugia");
+    }
+    
+    //Métodos sobreescritos
     @Override
     public double calcularSalario() {
         double bonoHorario = 0;
@@ -39,7 +72,8 @@ public class Enfermero extends Empleado {
                 bonoHorario = 200000;
                 break;
         }
-        return getsalarioBase()+bonoHorario;               
+        double bonoAntiguedad= getsalarioBase() * 0.5 * antiguedad();
+        return getsalarioBase() + bonoHorario + bonoAntiguedad;
     }
 
     @Override

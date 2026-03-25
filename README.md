@@ -50,8 +50,25 @@ Un hospital necesita digitalizar su sistema de gestión. El sistema debe permiti
 | ID | Historia | Prioridad | Story Points |
 |:---|:---|:---:|:---:|
 | **HU-01** | Como **recepcionista**, quiero registrar pacientes para mantener un historial médico digital | Alta | 5 |
-
-
+|:---|:---|:---:|:---:|
+| **HU-02** | Como **recepcionista**, necesito ingresar nuevos pacientes al sistema para conservar su información médica| Alta | 5 |
+|:---|:---|:---:|:---:|
+| **HU-03** | Como **recepcionista**, quiero registrar las alergias de los pacientes para prevenir posibles reacciones adversas | Alta | 3 |
+|:---|:---|:---:|:---:|
+| **HU-04** | Como **administrador**, necesito incorporar distintos tipos de empleados al sistema para gestionar el personal del hospital | Alta | 8 |
+|:---|:---|:---:|:---:|
+| **HU-05** | Como **administrador**, quiero establecer turnos laborales para los enfermeros para organizar mejor la atención | Alta | 3 |
+|:---|:---|:---:|:---:|
+| **HU-06** | Como **administrador**, necesito calcular el salario de los empleados considerando factores como antigüedad, especialidad y turno | Alta | 8 |
+|:---|:---|:---:|:---:|
+| **HU-07** | Como **administrador**, quiero obtener el cálculo total de la nómina del hospital para tener control sobre los gastos | Media | 5 |
+|:---|:---|:---:|:---:|
+| **HU-08** | Como **recepcionista**, quiero anular citas cuando sea necesario para gestionar cambios en la agenda | Medio | 5 |
+|:---|:---|:---:|:---:|
+| **HU-09** | Como **medico**, quiero registrar el diagnóstico de cada cita para dejar evidencia de la atención brindada | Media | 5 |
+|:---|:---|:---:|:---:|
+| **HU-10** | Como **recepcionista**, quiero agendar citas médicas para organizar la atención de pacientes| Alta | 5 |
+|:---|:---|:---:|:---:|
 ---
 
 ## 🏗️ Requisitos de Diseño UML

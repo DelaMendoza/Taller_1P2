@@ -12,7 +12,7 @@ public class Enfermero extends Empleado {
 
     private Turno turno;
     private String areaAsignada;
-    private List<Persona> pacientesACargo;
+    private List<Paciente> pacientesACargo;
 
     public Enfermero(int id, String nombre, String apellido, LocalDate fechaNacimiento, String email,
             String legajo, LocalDate fechaContratacion, double salarioBase, boolean activo, Turno turno, String areaAsignada) {
@@ -48,7 +48,7 @@ public class Enfermero extends Empleado {
         return new ArrayList<>(pacientesACargo);
     }
 
-    public void setPacientesACargo(List<Persona> pacientesACargo) {
+    public void setPacientesACargo(List<Paciente> pacientesACargo) {
         this.pacientesACargo = pacientesACargo;
     }
 

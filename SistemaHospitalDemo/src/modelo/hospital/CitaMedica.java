@@ -1,12 +1,10 @@
 package modelo.hospital;
-
 import java.time.LocalDateTime;
 import modelo.enums.EstadoCita;
 import modelo.personas.Medico;
 import modelo.personas.Paciente;
 
 public class CitaMedica {
-//id, paciente, medico, fechaHora, motivo, estado, costo, diagnostico
     private int id;
     private Paciente paciente; 
     private Medico medico;
@@ -27,8 +25,6 @@ public class CitaMedica {
         this.diagnostico = diagnostico;
     }
 
-    CitaMedica(int id, Paciente paciente, Medico medico, LocalDateTime fechaHora, String motivo) {
-    }
 
     public int getId() {
         return id;

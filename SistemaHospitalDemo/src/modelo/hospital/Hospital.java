@@ -1,10 +1,10 @@
 package modelo.hospital;
 
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 import modelo.abstractas.Empleado;
-import modelo.personas.Medico;
+
 import modelo.personas.Paciente;
 
 public class Hospital {
@@ -70,23 +70,6 @@ public class Hospital {
         }
     }
 
-    public CitaMedica agendarCita(Paciente paciente, Medico medico, LocalDateTime fechaHora, String motivo) {
-        if (!pacientes.contains(paciente)) {
-            System.out.println("No se puede agendar la cita. El paciente no esta registrado en el hospital");
-            return null;
-        }
-
-        if (!medico.isActivo()) {
-            System.out.println("No se puede agendar la cita. El medico no está disponible");
-            return null;
-        }
-
-        int id = citas.size() + 1;
-        CitaMedica cita = new CitaMedica(id, paciente, medico, fechaHora, motivo);
-        citas.add(cita);
-        System.out.println("La cita ha sido agendada");
-        return cita;
-    }
 
     public double calcularNominaTotal() {
         double nominaTotal = 0;
